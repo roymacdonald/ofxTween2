@@ -1,1 +1,2 @@
-ofxTween
+ofxEasing
+ofxTween2

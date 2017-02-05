@@ -2,7 +2,7 @@
 
 
 #include "ofMain.h"
-#include "ofxTween.h"
+#include "ofxTween2.h"
 
 
 class ofApp : public ofBaseApp{
@@ -22,29 +22,18 @@ class ofApp : public ofBaseApp{
 
        float length_float;
 
-       ofxTween tweenback;
-       ofxTween tweenbounce;
-       ofxTween tweencirc;
-       ofxTween tweencubic;
-       ofxTween tweenelastic;
-       ofxTween tweenexpo;
-       ofxTween tweenlinear;
-       ofxTween tweenquad;
-       ofxTween tweenquart;
-       ofxTween tweenquint;
-       ofxTween tweensine;
+       ofxTween2 tweenback;
+       ofxTween2 tweenbounce;
+       ofxTween2 tweencirc;
+       ofxTween2 tweencubic;
+       ofxTween2 tweenelastic;
+       ofxTween2 tweenexpo;
+       ofxTween2 tweenlinear;
+       ofxTween2 tweenquad;
+       ofxTween2 tweenquart;
+       ofxTween2 tweenquint;
+       ofxTween2 tweensine;
 
-       ofxTween multitween;
+       ofxTween2 multitween;
 
-       ofxEasingBack 	easingback;
-       ofxEasingBounce 	easingbounce;
-       ofxEasingCirc 	easingcirc;
-       ofxEasingCubic 	easingcubic;
-       ofxEasingElastic easingelastic;
-       ofxEasingExpo 	easingexpo;
-       ofxEasingLinear 	easinglinear;
-       ofxEasingQuad 	easingquad;
-       ofxEasingQuart 	easingquart;
-       ofxEasingQuint 	easingquint;
-       ofxEasingSine	easingsine;
 };
