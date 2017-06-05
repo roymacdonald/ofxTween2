@@ -9,7 +9,7 @@ class ofxTween2{
 
 		ofxTween2();
 	
-		ofxTween2(int id, std::function<float(float,float,float,float)> easing, float from, float to, unsigned duration, unsigned delay);
+		ofxTween2(size_t id, std::function<float(float,float,float,float)> easing, float from, float to, unsigned duration, unsigned delay);
     
         // Mitchell Nordine 2/2/14
         // Added copy constructor to handle heap allocation (now much easier
@@ -17,7 +17,7 @@ class ofxTween2{
         ofxTween2(const ofxTween2 &other);
         ofxTween2 operator=(const ofxTween2 &other);
 
-		void setParameters(int id, std::function<float(float,float,float,float)> easing, float from, float to,  unsigned duration, unsigned delay);
+		void setParameters(size_t id, std::function<float(float,float,float,float)> easing, float from, float to,  unsigned duration, unsigned delay);
 		void setParameters( std::function<float(float,float,float,float)> easing,  float from, float to,  unsigned duration, unsigned delay);
 
 		void addValue(float from, float to);
@@ -37,10 +37,10 @@ class ofxTween2{
 		bool isDelaying();
 		bool isCompleted();
 
-		int id;
+		size_t id;
 		
-	ofEvent<int> end_E;
-	ofEvent<int> begin_E;//triggered when the tween starts after the delay 
+	ofEvent<size_t> end_E;
+	ofEvent<size_t> begin_E;//triggered when the tween starts after the delay 
 	
 	
 	template<class ListenerClass, typename ListenerMethod>

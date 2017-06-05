@@ -5,7 +5,7 @@ ofxTween2::ofxTween2(){
 	completed = true;
 	running = false;
 	delaying = false;
-	id = -1;
+	id = 0;
 }
 
 ofxTween2::ofxTween2(const ofxTween2 &other)
@@ -38,7 +38,7 @@ ofxTween2 ofxTween2::operator=(const ofxTween2 &other)
 	return *this;
 }
 
-ofxTween2::ofxTween2(int id, std::function<float(float,float,float,float)> easing, float from, float to,  unsigned duration, unsigned delay) {
+ofxTween2::ofxTween2(size_t id, std::function<float(float,float,float,float)> easing, float from, float to,  unsigned duration, unsigned delay) {
 	setParameters(id, easing, from,to,duration,delay);
 }
 
@@ -49,7 +49,7 @@ void ofxTween2::setParameters( std::function<float(float,float,float,float)> eas
 	setParameters(id, easing,from,to,duration,delay);
 }
 
-void ofxTween2::setParameters(int id, std::function<float(float,float,float,float)> easing, float from, float to,  unsigned duration, unsigned delay){
+void ofxTween2::setParameters(size_t id, std::function<float(float,float,float,float)> easing, float from, float to,  unsigned duration, unsigned delay){
 	this->from.clear();
 	this->to.clear();
 	pTarget.clear();
