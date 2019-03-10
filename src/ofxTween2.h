@@ -8,12 +8,9 @@ class ofxTween2{
 	public:
 
 		ofxTween2();
-	
+        ~ofxTween2() = default;
 		ofxTween2(int id, std::function<float(float,float,float,float)> easing, float from, float to, unsigned duration, unsigned delay);
     
-        // Mitchell Nordine 2/2/14
-        // Added copy constructor to handle heap allocation (now much easier
-        // to work on stack and copy classes that contain a tween object).
         ofxTween2(const ofxTween2 &other);
         ofxTween2 operator=(const ofxTween2 &other);
 
@@ -22,8 +19,6 @@ class ofxTween2{
 
 		void addValue(float from, float to);
 		void start();
-
-		~ofxTween2();
 
 		float update();
 		// calculates and applies a new value to the target

@@ -42,8 +42,8 @@ ofxTween2::ofxTween2(int id, std::function<float(float,float,float,float)> easin
 	setParameters(id, easing, from,to,duration,delay);
 }
 
-ofxTween2::~ofxTween2() {
-}
+//ofxTween2::~ofxTween2() {
+//}
 
 void ofxTween2::setParameters( std::function<float(float,float,float,float)> easing, float from, float to,  unsigned duration, unsigned delay){
 	setParameters(id, easing,from,to,duration,delay);
