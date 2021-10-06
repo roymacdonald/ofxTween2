@@ -38,6 +38,12 @@ ofxTween2 ofxTween2::operator=(const ofxTween2 &other)
 	return *this;
 }
 
+void ofxTween2::stop(){
+	completed = true;
+	running = false;
+	delaying = false;
+}
+
 ofxTween2::ofxTween2(int id, std::function<float(float,float,float,float)> easing, float from, float to,  unsigned duration, unsigned delay) {
 	setParameters(id, easing, from,to,duration,delay);
 }
@@ -114,7 +120,7 @@ float ofxTween2::update() {
 			ofNotifyEvent(end_E,id);
 		} else if (currentTime>=startTime) {
 			for (unsigned i=0; i<from.size(); i++) {
-				pTarget[i]= ofxeasing::map(currentTime, startTime, startTime+duration, from[i], to[i], easing);
+				pTarget[i]= ofxeasing::map_clamp(currentTime, startTime, startTime+duration, from[i], to[i], easing);
 			}
 			if(!running){
 				ofNotifyEvent(begin_E, id);
